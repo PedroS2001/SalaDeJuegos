@@ -1,0 +1,21 @@
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-10 col-lg-8">
+                <div class="card">
+                    <div class="box">
+                        <div *ngIf="!(authService.userData | async)">
+                            <h1 color=danger>Registro</h1>
+                            <p class="text-muted"> Ingrese correo y contraseña</p> 
+                                <input type="text" name="" placeholder="Correo" [(ngModel)]="correo"> 
+                                <input type="password" name="" placeholder="Clave" [(ngModel)]="clave"> 
+                                <p class="text-danger">{{error}}</p>
+                            <a class="forgot text-muted" (click)="goToLogin()">Ya tiene una cuenta? <strong>Iniciar sesion</strong> </a> 
+                                <input type="submit" name="" value="Crear Cuenta" (click)="signUp()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+      </div>

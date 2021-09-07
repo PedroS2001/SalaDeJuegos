@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+/* body {
+    padding-top: 3.5rem;
+    background-image: url("./assets/s.jpg");
+    background-position: center center;
+  } */
+  body {
+    padding-top: 3.5rem;
+    /* Ruta relativa o completa a la imagen */
+    background-image: url("./assets/wallpaper.jpg");
+    /* Centramos el fondo horizontal y verticalmente */
+    background-position: center center;
+    /* El fonde no se repite */
+    background-repeat: no-repeat;
+    /* Fijamos la imagen a la ventana para que no supere el alto de la ventana */
+    background-attachment: fixed;
+    /* El fonde se re-escala automáticamente */
+    background-size: cover;
+    /* Color de fondo si la imagen no se encuentra o mientras se está cargando */
+    background-color: #FFF;
+    /* Fuente para el texto */
+    text-align: center;
+    color: #000;
+    font-family: "Times New Roman", Times, serif;
+}

@@ -3,3 +3,9 @@
     font-size: larger;
     font-weight: 500;
 }
+
+.logo{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 40px;
+}

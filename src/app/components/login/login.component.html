@@ -1,0 +1,25 @@
+<div class="container-flex">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-10 col-lg-8">
+            <div class="card">
+                <div class="box">
+                    <h1>Ingreso</h1>
+                    <p class="text-muted"> Ingrese su usuario y contraseña</p>
+                    <input type="text" name="" placeholder="Correo" [(ngModel)]="correo">
+                    <input type="password" name="" placeholder="Clave" [(ngModel)]="clave">
+                    <p class="text-danger">{{error}}</p>
+                    <a class="forgot text-muted" (click)="goToRegistro()">No tiene una cuenta? <strong>Crear
+                            Cuenta</strong> </a>
+                    <input type="submit" name="" value="Ingresar" (click)="signIn()">
+                    <input type="submit" name="" value="Acceso Rapido" (click)="AccesoRapido()">
+
+                    <!-- <button (click)="funcion1()">UNO</button>
+                        <button (click)="funcion2()">DOS</button>
+                        <button (click)="funcion3()">TRES</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
