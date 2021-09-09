@@ -1,0 +1,43 @@
+<div class="container-fluid" style="margin-top: 1rem; background-color: cornflowerblue; padding: 20px;">
+
+    <div class="row">
+        <div class="col-6">
+            <img src="../../../assets/carta.jpg" style="height: 8cm; width: 8cm ;" alt="Card image">
+        </div>
+
+        <div class="col-6">
+            <div style="height: 8cm; width: 8cm ; background-color: white;  ">
+                <p style="font-size: 3cm;" >{{numeroAleatorio}}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" >
+        <div class="col" align="center">
+            <h3>Puntuacion:</h3>
+            <h1 style="height: 50px; width: 50px; background-color: burlywood;"> {{puntuacion}}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p>La siguiente carta es....</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col"> 
+            <button type="button" class="btn-lg btn-secondary" (click)="esMenor()" >MENOR</button>
+        </div>
+
+        <div class="col">
+            <button type="button" class="btn-lg btn-secondary" (click)="esMayor()" >MAYOR</button>
+        </div>
+    </div>
+
+
+
+
+
+
+

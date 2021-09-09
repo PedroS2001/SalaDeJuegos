@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -16,5 +17,10 @@ export class HomeComponent implements OnInit {
   MostrarData()
   {
     console.log(this.authService.userLogueado);
+  }
+
+  goToMayorMenor()
+  {
+    this.router.navigateByUrl('mayor-menor');
   }
 }
