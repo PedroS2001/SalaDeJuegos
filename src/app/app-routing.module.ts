@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MayorMenorComponent } from './components/mayor-menor/mayor-menor.component';
@@ -14,12 +15,13 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'quien-soy', component: QuienSoyComponent },
   { path: 'mayor-menor', component: MayorMenorComponent},
+  { path: 'ahorcado', component: AhorcadoComponent },
   { path: '', redirectTo: 'home', pathMatch: "full" },
   { path:'**', component: PagErrorComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

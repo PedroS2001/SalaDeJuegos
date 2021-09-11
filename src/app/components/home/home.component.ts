@@ -23,4 +23,8 @@ export class HomeComponent implements OnInit {
   {
     this.router.navigateByUrl('mayor-menor');
   }
+  goToAhorcado()
+  {
+    this.router.navigateByUrl('ahorcado');
+  }
 }

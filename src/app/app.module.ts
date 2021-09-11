@@ -16,6 +16,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { MayorMenorComponent } from './components/mayor-menor/mayor-menor.component';
+import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MayorMenorComponent } from './components/mayor-menor/mayor-menor.compon
     PagErrorComponent,
     RegistroComponent,
     NavbarComponent,
-    MayorMenorComponent
+    MayorMenorComponent,
+    AhorcadoComponent
   ],
   imports: [
     BrowserModule,

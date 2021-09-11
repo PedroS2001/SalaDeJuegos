@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="container">
+        <img src="{{arrayImagenes[indexImagen]}}" style="width: 400px;" alt="ahorcado">
+
+        <!-- <h1>{{palabraElegida}}</h1> -->
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col"  *ngFor="let item of palabraConGuionesArray">
+                <div class="letras"> <strong> {{item}}</strong>  </div>
+            </div>
+
+        </div>
+    </div>
+    
+
+
+    <div class="container">
+        
+        <div class="row">
+            <button class="btn btn-light m-1 btn-lg" *ngFor="let item of teclado" (click)="pushLetra(item)" id="{{item}}">{{item}}</button>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button (click)="ReiniciarJuego()">Nuevo Juego</button>
+        </div>
+    </div>
+
+
+</div>
