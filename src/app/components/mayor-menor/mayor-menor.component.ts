@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mayor-menor',
@@ -10,7 +11,8 @@ export class MayorMenorComponent implements OnInit {
   numeroAleatorio:number;
   segundoNumero:number;
   puntuacion:number;
-  constructor() {
+
+  constructor(private router:Router) {
     this.numeroAleatorio = this.getRandom();
     this.segundoNumero = this.getRandom();
     this.puntuacion = 0;
@@ -23,7 +25,7 @@ export class MayorMenorComponent implements OnInit {
   getRandom()
   {
     let numero = Math.floor(Math.random() * (13 - 1)) + 1; 
-    console.log(numero);
+    //console.log(numero);
     return Math.floor(numero);
   }
 
@@ -37,8 +39,7 @@ export class MayorMenorComponent implements OnInit {
       //puntuacion +1 y asigno dos numeros nuevos
     }
     else{
-      alert("PERDISTE. Tu puntuacion: " + this.puntuacion);
-      this.puntuacion = 0;
+      this.apareceAlert();
     }
   }
 
@@ -52,12 +53,35 @@ export class MayorMenorComponent implements OnInit {
       //puntuacion +1 y asigno dos numeros nuevos
     }
     else{
-      alert("PERDISTE. Tu puntuacion: " + this.puntuacion);
-      this.puntuacion = 0;
+      this.apareceAlert();
     }
   }
 
+  apareceAlert()
+  {
+    let espacio = (<HTMLElement>document.getElementById("pedrito"));
 
+
+      espacio.innerHTML= `<div class="alert alert-warning"">
+      <h4 class="alert-heading">Juego Terminado!!</h4>
+      <hr>
+      <p>Has hecho `+this.puntuacion+` puntos.</p>
+      </div>`
+      this.desabilitarBotones();
+    
+  }
+
+  ReiniciarJuego()
+  {
+    this.router.navigateByUrl('refresh', {skipLocationChange: true}).
+    then(()=> this.router.navigate(["mayor-menor"]));
+  }
+
+  desabilitarBotones()
+  {
+    (<HTMLButtonElement>document.getElementById('btnMayor')).disabled=true;
+    (<HTMLButtonElement>document.getElementById('btnMenor')).disabled=true;
+  }
 
 
 

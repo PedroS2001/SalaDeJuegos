@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { disableDebugTools } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -123,7 +124,7 @@ export class AhorcadoComponent implements OnInit {
         this.teclado.forEach((_letter: string) => {
           (<HTMLButtonElement> document.getElementById(_letter)).disabled=true;
         });
-        alert("USTED GANO");
+        this.apareceAlert(true);
       }
     }
     else{
@@ -132,7 +133,7 @@ export class AhorcadoComponent implements OnInit {
 
     if(this.indexImagen == 7)
     {
-      alert("PERDISTE");
+      this.apareceAlert(false);
       this.teclado.forEach((_letter: string) => {
         (<HTMLButtonElement> document.getElementById(_letter)).disabled=true;
       });
@@ -168,5 +169,30 @@ export class AhorcadoComponent implements OnInit {
       }
       return true;
   }
+
+
+  apareceAlert(gano:boolean)
+  {
+    let espacio = (<HTMLElement>document.getElementById("pedrito"));
+
+    if(gano)
+    {
+      espacio.innerHTML= `<div class="alert alert-success"">
+      <h4 class="alert-heading">Felicitaciones!!</h4>
+      <hr>
+      <p>Has ganado esta partida.</p>
+      </div>`
+    }
+    else
+    {
+      espacio.innerHTML= `<div class="alert alert-danger" [hidden]="!perdedor" >
+      <h4 class="alert-heading">Lo sentimos :(</h4>
+      <hr>
+      <p>Has perdido esta partida. La palabra era `+this.palabraElegida+`</p>
+      </div>`
+    }
+  }
+
+
 
 }

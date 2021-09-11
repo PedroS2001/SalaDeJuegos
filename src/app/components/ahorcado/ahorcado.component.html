@@ -2,9 +2,9 @@
 
     <div class="container">
         <img src="{{arrayImagenes[indexImagen]}}" style="width: 400px;" alt="ahorcado">
-
-        <!-- <h1>{{palabraElegida}}</h1> -->
     </div>
+
+    <div class="container" id="pedrito"></div>
 
     <div class="container">
         <div class="row">
@@ -20,14 +20,17 @@
     <div class="container">
         
         <div class="row">
-            <button class="btn btn-light m-1 btn-lg" *ngFor="let item of teclado" (click)="pushLetra(item)" id="{{item}}">{{item}}</button>
+            <button class="bttn-fill bttn-md bttn-primary m-1 btn-lg" style="width: 1,5cm;
+            height: 1,5cm;
+            font-size: 1cm;" *ngFor="let item of teclado" (click)="pushLetra(item)" id="{{item}}">{{item}}</button>
         </div>
 
     </div>
 
     <div class="row">
         <div class="col">
-            <button (click)="ReiniciarJuego()">Nuevo Juego</button>
+            <!-- <button (click)="ReiniciarJuego()" class="btn btn-primary btn-lg">Nuevo Juego</button> -->
+            <button class="bttn-fill bttn-lg bttn-primary" (click)="ReiniciarJuego()">Nuevo Juego</button>
         </div>
     </div>
 

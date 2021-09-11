@@ -1,4 +1,4 @@
-<div class="container-fluid" style="margin-top: 1rem; background-color: cornflowerblue; padding: 20px;">
+<div class="container-fluid" style="margin-top: 1rem; padding: 20px;">
 
     <div class="row">
         <div class="col-6">
@@ -10,6 +10,10 @@
                 <p style="font-size: 3cm;" >{{numeroAleatorio}}</p>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+        <div class="container" id="pedrito" style="padding-top: 10px;"></div>
     </div>
     
     <div class="row" >
@@ -27,14 +31,20 @@
 
     <div class="row">
         <div class="col"> 
-            <button type="button" class="btn-lg btn-secondary" (click)="esMenor()" >MENOR</button>
+            <button class="bttn-jelly bttn-lg bttn-danger" id="btnMenor" (click)="esMenor()" >MENOR</button>
+
         </div>
 
         <div class="col">
-            <button type="button" class="btn-lg btn-secondary" (click)="esMayor()" >MAYOR</button>
+            <button class="bttn-jelly bttn-lg bttn-danger" id="btnMayor" (click)="esMayor()" >MAYOR</button>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col">
+            <button class="bttn-jelly bttn-lg bttn-success" (click)="ReiniciarJuego()" >Nuevo Juego</button>
+        </div>
+    </div>
 
 
 
