@@ -149,7 +149,7 @@ export class AhorcadoComponent implements OnInit {
   ReiniciarJuego()
   {
     this.router.navigateByUrl('refresh', {skipLocationChange: true}).
-    then(()=> this.router.navigate(["ahorcado"]));
+    then(()=> this.router.navigate(["saladejuegos/ahorcado"]));
 
 //    window.location.reload()
   }

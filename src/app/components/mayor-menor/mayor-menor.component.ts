@@ -75,7 +75,7 @@ export class MayorMenorComponent implements OnInit {
   ReiniciarJuego()
   {
     this.router.navigateByUrl('refresh', {skipLocationChange: true}).
-    then(()=> this.router.navigate(["mayor-menor"]));
+    then(()=> this.router.navigate(["saladejuegos/mayor-menor"]));
   }
 
   desabilitarBotones()
