@@ -35,4 +35,8 @@ export class AppComponent {
   {
     this.router.navigateByUrl('registro');
   }
+  goToChat()
+  {
+    this.router.navigateByUrl('saladejuegos/chat');
+  }
 }

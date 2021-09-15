@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
+import { ChatComponent } from './components/chat/chat.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MayorMenorComponent } from './components/mayor-menor/mayor-menor.component';
@@ -14,9 +15,12 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'quien-soy', component: QuienSoyComponent },
-  { path: 'mayor-menor', component: MayorMenorComponent},
-  { path: 'ahorcado', component: AhorcadoComponent },
+  // { path: 'mayor-menor', loadChildren: () => import('./saladejuegos/saladejuegos.module').then(m => m.SaladejuegosModule)},
+  // { path: 'mayor-menor', component: MayorMenorComponent},
+  // { path: 'ahorcado', component: AhorcadoComponent },
+  // { path: 'chat', component: ChatComponent },
   { path: '', redirectTo: 'home', pathMatch: "full" },
+  { path: 'saladejuegos', loadChildren: () => import('./saladejuegos/saladejuegos.module').then(m => m.SaladejuegosModule), canActivate: [GuardianService] },
   { path:'**', component: PagErrorComponent }
 ];
 

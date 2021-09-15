@@ -3,13 +3,10 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container">
-        <h1 class="display-3">Pedro Señeriz!</h1>
+        <h1 class="display-3">Sala de juegos</h1>
         <p>
           <strong>Bienvenido</strong> a mi sala de juegos, espero que te diviertas!
         </p>
-        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
-      </div>
     </div>
 
     <!-- responsive equal width cols, can be sm, md, lg, or xl -->
@@ -17,29 +14,29 @@
       <div class="row" align="center" >
 
         <div class="col-sm">
-          <div class="card" style="margin: 8px;">
+          <div class="card">
             <a (click)="goToAhorcado()" > <img class="card-img-top" src="../../../assets/ahorcado.png" alt="Card image cap"></a>
             <div class="card-body">
-              <h4 class="card-title">Ahorcado</h4>
+              <h4 class="card-title"> <strong> Ahorcado</strong> </h4>
               <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
+                El clasico juego del ahorcado ahora disponible en la web. Probalo!!
               </p>
-              <a (click)="goToAhorcado()" class="btn btn-primary">Go somewhere</a>
+              <button class="bttn-jelly bttn-md bttn-primary bttn-block" (click)="goToAhorcado()">IR</button>
+
             </div>
           </div>
         </div>
 
         <div class="col-sm">
-          <div class="card" style="margin: 8px;">
+          <div class="card" >
             <a (click)="goToMayorMenor()" ><img class="card-img-top" src="../../../assets/mayormenor.png" alt="Card image cap"></a>
             <div class="card-body">
-              <h4 class="card-title">Mayor o Menor</h4>
+              <h4 class="card-title"> <strong> Mayor o Menor</strong></h4>
               <p class="card-text">
-                Some quick example text to build on the card title
-                and make up the bulk of the card's content.
+                El famoso juego de cartas adaptado para que se pueda jugar
+                en internet!
               </p>
-              <a class="btn btn-primary" (click)="goToMayorMenor()" >Go somewhere</a>
+              <button class="bttn-jelly bttn-md bttn-primary bttn-block" (click)="goToMayorMenor()">IR</button>
             </div>
           </div>
         </div>
@@ -47,7 +44,7 @@
 
     <div class="row" align="center">
         <div class="col-sm">
-          <div class="card" style="margin: 8px;">
+          <div class="card" >
             <img class="card-img-top" src="../../../assets/question.png" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">Preguntados</h4>
@@ -55,13 +52,13 @@
                 Some quick example text to build on the card title
                 and make up the bulk of the card's content.
               </p>
-              <a class="btn btn-primary">Go somewhere</a>
+              <button class="bttn-jelly bttn-md bttn-primary bttn-block" >IR</button>
             </div>
           </div>
         </div>
 
         <div class="col-sm">
-          <div class="card" style="margin: 8px;">
+          <div class="card" >
             <img class="card-img-top" src="../../../assets/favicon.ico" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">Juego Propio</h4>
@@ -69,7 +66,7 @@
                 Some quick example text to build on the card title
                 and make up the bulk of the card's content.
               </p>
-              <a class="btn btn-primary">Go somewhere</a>
+              <button class="bttn-jelly bttn-md bttn-primary bttn-block" >IR</button>
             </div>
           </div>
         </div>
@@ -82,5 +79,5 @@
   </main>
 
   <footer class="container">
-    <p>&copy; Company 2017-2018</p>
+    <p>&copy; Pedro Señeriz - 2021</p>
   </footer>

@@ -2,3 +2,10 @@
 body {
     padding-top: 3.5rem;
   }
+
+.jumbotron,
+.card{
+  margin: 8px; 
+  border-radius: 1cm; 
+  background-color: #bcc54e;
+}

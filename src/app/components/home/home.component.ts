@@ -21,10 +21,10 @@ export class HomeComponent implements OnInit {
 
   goToMayorMenor()
   {
-    this.router.navigateByUrl('mayor-menor');
+    this.router.navigateByUrl('saladejuegos/mayor-menor');
   }
   goToAhorcado()
   {
-    this.router.navigateByUrl('ahorcado');
+    this.router.navigateByUrl('saladejuegos/ahorcado');
   }
 }

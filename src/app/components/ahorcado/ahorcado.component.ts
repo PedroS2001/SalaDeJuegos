@@ -16,7 +16,8 @@ export class AhorcadoComponent implements OnInit {
     'TELEVISOR',
     'AURICULAR',
     'TOSTADORA',
-    'PARAGUAS'
+    'PARAGUAS',
+    'TINCHO'
   ];
 
   arrayImagenes = [

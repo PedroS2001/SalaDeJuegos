@@ -65,6 +65,7 @@ export class MayorMenorComponent implements OnInit {
       espacio.innerHTML= `<div class="alert alert-warning"">
       <h4 class="alert-heading">Juego Terminado!!</h4>
       <hr>
+      <p>la carta era `+this.segundoNumero+`</p>
       <p>Has hecho `+this.puntuacion+` puntos.</p>
       </div>`
       this.desabilitarBotones();
