@@ -12,7 +12,7 @@ export class GuardianService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<boolean> | Promise<boolean> | boolean
   {
-    if(this.authService.userLogueado != '')
+    if(this.authService.currentUser)
     {
       return true;
     }

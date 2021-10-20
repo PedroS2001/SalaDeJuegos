@@ -34,7 +34,7 @@
         </li>
 
         <li>
-          <a class="nav-link" style="color: wheat;"> {{authService.userLogueado.email}} </a>
+          <a *ngIf="authService.currentUser" class="nav-link" style="color: wheat;"> {{authService.currentUser.correo}} </a>
         </li>
       </ul>
 

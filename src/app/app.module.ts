@@ -18,6 +18,12 @@ import { environment } from '../environments/environment';
 import { MayorMenorComponent } from './components/mayor-menor/mayor-menor.component';
 import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PreguntadosComponent } from './components/preguntados/preguntados.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,12 +36,16 @@ import { ChatComponent } from './components/chat/chat.component';
     NavbarComponent,
     MayorMenorComponent,
     AhorcadoComponent,
-    ChatComponent
+    ChatComponent,
+    PreguntadosComponent
   ],
   imports: [
     BrowserModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule // imports firebase/auth, only needed for auth features

@@ -9,6 +9,7 @@ export class AuthService {
   loggedIn:boolean = false;
   userData: any;
   userLogueado:any = '';
+  currentUser:any ;
   
   constructor(private auth: AngularFireAuth) {
 
@@ -23,6 +24,7 @@ export class AuthService {
       // ...
     } else {
       this.userLogueado = '';
+      this.currentUser = null;
       // User is signed out
       // ...
     }

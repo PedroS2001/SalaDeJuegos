@@ -27,4 +27,9 @@ export class HomeComponent implements OnInit {
   {
     this.router.navigateByUrl('saladejuegos/ahorcado');
   }
+
+  goToPreguntados()
+  {
+    this.router.navigateByUrl('saladejuegos/preguntados');
+  }
 }

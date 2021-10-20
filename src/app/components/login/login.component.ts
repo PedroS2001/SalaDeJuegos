@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit {
     this.authService.SignIn(this.correo, this.clave)
     .then((result) => {
       this.authService.loggedIn = true;
+      this.authService.currentUser = {'correo': this.correo, 'clave':this.clave};
       // console.log(result.user?.email);
       // console.log(this.authService.userLogueado);
       this.fireService.agregarLog(this.correo);

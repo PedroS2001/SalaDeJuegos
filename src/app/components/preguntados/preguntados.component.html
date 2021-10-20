@@ -1,0 +1,49 @@
+
+<div class="col-sm">
+    <div class="card" >
+        <div class="row" style="display: block;" align="center">
+            <img class="card-img-top"  src={{pais.flag}} style="width: 350px; height: 350px;" alt="Card image cap">
+        </div>
+      <div class="card-body">
+        <h2 class="card-title">{{pregunta.pregunta}}</h2>
+        <div class="card-text">
+            <div class="row mb-4">
+                <div class="col"><button class="btn-lg btn-block bttn-bordered bttn-md bttn-primary" (click)="seleccionarRta(1)" >{{pregunta.op1}}</button></div>
+                <div class="col"><button class="btn-lg btn-block bttn-bordered bttn-md bttn-primary" (click)="seleccionarRta(2)">{{pregunta.op2}}</button></div>
+            </div>
+            <div class="row mb-4">
+                <div class="col"><button class="btn-lg btn-block bttn-bordered bttn-md bttn-primary" (click)="seleccionarRta(3)">{{pregunta.op3}}</button></div>
+                <div class="col"><button class="btn-lg btn-block bttn-bordered bttn-md bttn-primary" (click)="seleccionarRta(4)">{{pregunta.op4}}</button></div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- <div class="container">
+    <div class="col">
+        <div class="row">
+            <img src={{pais.flag}} style="width: 100px; height: 100px;" alt="" srcset="">
+            <h1>{{pregunta.pregunta}}</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="bttn-bordered bttn-md bttn-primary">{{pregunta.op1}}</button>
+            </div>
+            <div class="col">
+                <button class="bttn-bordered bttn-md bttn-primary">{{pregunta.op2}}</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="bttn-bordered bttn-md bttn-primary">{{pregunta.op3}}</button>
+            </div>
+            <div class="col">
+                <button class="bttn-bordered bttn-md bttn-primary">{{pregunta.op4}}</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+<button (click)="armarPregunta()">ArmarPregunta</button>
