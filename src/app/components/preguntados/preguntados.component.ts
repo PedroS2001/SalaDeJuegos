@@ -54,7 +54,7 @@ export class PreguntadosComponent implements OnInit {
       op2:'Ojos Del Salado',
       op3:'Volcan Llullaillaco',
       op4:'Aconcagua',
-      respuesta: 1,
+      respuesta: 2,
     }
   ];
 

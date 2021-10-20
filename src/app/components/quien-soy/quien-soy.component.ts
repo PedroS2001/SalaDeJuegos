@@ -10,7 +10,7 @@ export class QuienSoyComponent implements OnInit {
 
   datosGithub:any;
 
-  constructor(public gitService:GithubService) { }
+  constructor(public gitService: GithubService) { }
 
   ngOnInit(): void {
     this.traerDatos();
@@ -19,7 +19,7 @@ export class QuienSoyComponent implements OnInit {
 
   traerDatos()
   {
-    this.gitService.traerDatosGithub().subscribe(datosRetornados => {
+    this.gitService.traerDatosGithub().subscribe( (datosRetornados:any) => {
       console.info('Datos de Github', datosRetornados)
       this.datosGithub = datosRetornados;
     });
