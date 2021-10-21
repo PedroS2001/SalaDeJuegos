@@ -24,6 +24,7 @@ import { PreguntadosComponent } from './components/preguntados/preguntados.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ToastrModule } from 'ngx-toastr';
   imports: [
     BrowserModule,
     ToastrModule.forRoot(),
+    NgxLoadingModule.forRoot({}),
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,

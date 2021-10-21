@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PreguntadosComponent implements OnInit {
 
+  loading:boolean = true;
   arrayPaises:any = [];
   arrayPreguntas:any = [
     {
@@ -80,7 +81,7 @@ export class PreguntadosComponent implements OnInit {
 
     console.info('pregunta', this.pregunta);
     console.info('pais', this.pais);
-
+    this.loading = false;
   }
   getRandomInt(min:number, max:number) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -88,6 +89,7 @@ export class PreguntadosComponent implements OnInit {
 
   seleccionarRta(respuesta:any)
   {
+    this.loading = true;
     if(respuesta == this.pregunta.respuesta)
     {
       console.info('ADIVINO');
@@ -106,7 +108,9 @@ export class PreguntadosComponent implements OnInit {
         positionClass: 'toast-top-center'
       });
     }
-    this.armarPregunta();
+    setTimeout(() => {
+      this.armarPregunta();
+    }, 150);
   }
 
 
