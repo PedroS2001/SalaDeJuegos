@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AhorcadoComponent } from './components/ahorcado/ahorcado.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { HomeComponent } from './components/home/home.component';
+import { JuegopropioComponent } from './components/juegopropio/juegopropio.component';
 import { LoginComponent } from './components/login/login.component';
 import { MayorMenorComponent } from './components/mayor-menor/mayor-menor.component';
 import { PagErrorComponent } from './components/pag-error/pag-error.component';
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'quien-soy', component: QuienSoyComponent },
+  { path: 'juegopropio', component: JuegopropioComponent },
+
   // { path: 'mayor-menor', loadChildren: () => import('./saladejuegos/saladejuegos.module').then(m => m.SaladejuegosModule)},
   // { path: 'mayor-menor', component: MayorMenorComponent},
   // { path: 'ahorcado', component: AhorcadoComponent },

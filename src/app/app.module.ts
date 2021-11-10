@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { NgxLoadingModule } from 'ngx-loading';
+import { JuegopropioComponent } from './components/juegopropio/juegopropio.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NgxLoadingModule } from 'ngx-loading';
     MayorMenorComponent,
     AhorcadoComponent,
     ChatComponent,
-    PreguntadosComponent
+    PreguntadosComponent,
+    JuegopropioComponent
   ],
   imports: [
     BrowserModule,
