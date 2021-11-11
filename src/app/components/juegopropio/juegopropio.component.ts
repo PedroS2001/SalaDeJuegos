@@ -165,7 +165,7 @@ export class JuegopropioComponent implements OnInit {
       this.buscaminas.campoMinas[fila+1][columna] == 'B' ? minasAlrededor++ : 0 ;
       this.buscaminas.campoMinas[fila+1][columna+1] == 'B' ? minasAlrededor++ : 0 ;
     }
-    else if(fila == 16 || (fila == 8 && this.nivel == 1))
+    else if(fila == 15 || (fila == 7 && this.nivel == 1))
     {
       this.buscaminas.campoMinas[fila][columna-1] == 'B' ? minasAlrededor++ : 0 ;
       this.buscaminas.campoMinas[fila][columna+1] == 'B' ? minasAlrededor++ : 0 ;
