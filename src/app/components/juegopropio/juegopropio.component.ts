@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-juegopropio',
@@ -107,7 +108,11 @@ export class JuegopropioComponent implements OnInit {
     let casilla = this.buscaminas.campoMinas[fila][columna];
     if(casilla == 'B')
     {
-      alert('PERDISTE');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Has perdido! inicia un nuevo juego',
+      });
     }
     else
     {
@@ -160,7 +165,7 @@ export class JuegopropioComponent implements OnInit {
       this.buscaminas.campoMinas[fila+1][columna] == 'B' ? minasAlrededor++ : 0 ;
       this.buscaminas.campoMinas[fila+1][columna+1] == 'B' ? minasAlrededor++ : 0 ;
     }
-    else if(fila == this.buscaminas.filas)
+    else if(fila == 16 || (fila == 8 && this.nivel == 1))
     {
       this.buscaminas.campoMinas[fila][columna-1] == 'B' ? minasAlrededor++ : 0 ;
       this.buscaminas.campoMinas[fila][columna+1] == 'B' ? minasAlrededor++ : 0 ;
@@ -194,7 +199,12 @@ export class JuegopropioComponent implements OnInit {
       this.buscaminas.minasEncontradas++;
       if(this.buscaminas.minasEncontradas == this.buscaminas.minasTotales)
       {
-        alert('Gano el juego!');
+        Swal.fire(
+          'Bien hecho!',
+          'Has ganado el juego!',
+          'success'
+        )
+        // alert('Gano el juego!');
       }
     }
     let casillaHTML = (<HTMLElement> document.getElementById(idCasilla));

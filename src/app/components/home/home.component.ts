@@ -32,4 +32,8 @@ export class HomeComponent implements OnInit {
   {
     this.router.navigateByUrl('saladejuegos/preguntados');
   }
+  goToBuscaminas()
+  {
+    this.router.navigateByUrl('saladejuegos/buscaminas');
+  }
 }
