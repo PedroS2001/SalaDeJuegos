@@ -101,6 +101,29 @@ export class JuegopropioComponent implements OnInit {
     }
   }
 
+  perdioJuego()
+  {
+    let minasPlantadas:any = 0;
+    let fila :number = 0;
+    let columna :number = 0 ;
+    while(minasPlantadas < this.buscaminas.minasTotales)
+    {
+      if(this.buscaminas.campoMinas[fila][columna] == 'B')
+      {
+        let idCasilla = fila+'_'+columna;
+        let casillaHTML = (<HTMLElement> document.getElementById(idCasilla));
+        casillaHTML.innerHTML = 'B'
+        minasPlantadas++;
+      }
+      columna++;
+      if(columna > this.buscaminas.columnas)
+      {
+        fila++;
+        columna = 0;
+      }
+    }
+  }
+
   destapar(fila:number,columna:number)
   {
     // console.info(this.buscaminas.campoMinas[fila][columna]);
@@ -113,6 +136,9 @@ export class JuegopropioComponent implements OnInit {
         title: 'Oops...',
         text: 'Has perdido! inicia un nuevo juego',
       });
+
+      this.perdioJuego();
+
     }
     else
     {
@@ -186,12 +212,15 @@ export class JuegopropioComponent implements OnInit {
     }
 
     return minasAlrededor;
-
   }
 
 
   clickDerecho(event:Event, fila:any,columna:any)
   {
+    this.buscaminas.campoMinas[fila][columna] = {};
+    this.buscaminas.campoMinas[fila][columna].y = 6;
+    this.buscaminas.campoMinas[fila][columna].x = 8;
+    console.info(this.buscaminas.campoMinas[fila][columna]);
     event.preventDefault();
     let idCasilla = fila+'_'+columna;
     if(this.buscaminas.campoMinas[fila][columna] == 'B')
@@ -204,7 +233,6 @@ export class JuegopropioComponent implements OnInit {
           'Has ganado el juego!',
           'success'
         )
-        // alert('Gano el juego!');
       }
     }
     let casillaHTML = (<HTMLElement> document.getElementById(idCasilla));
