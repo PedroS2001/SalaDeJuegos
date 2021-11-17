@@ -41,8 +41,9 @@ export class JuegopropioComponent implements OnInit {
         for(let j=0; j< this.buscaminas.columnas; j++)
         {
           let idCasilla = i+'_'+j;
-          let casillaHTML = (<HTMLElement> document.getElementById(idCasilla));
+          let casillaHTML = (<HTMLInputElement> document.getElementById(idCasilla));
           casillaHTML.innerHTML = '';
+          casillaHTML.readOnly = false;
         }
       }
       this.pintarTablero();
@@ -103,15 +104,16 @@ export class JuegopropioComponent implements OnInit {
 
   perdioJuego()
   {
+    this.bloquearCuandoPierde();
     let minasPlantadas:any = 0;
     let fila :number = 0;
     let columna :number = 0 ;
     while(minasPlantadas < this.buscaminas.minasTotales)
     {
+      let idCasilla = fila+'_'+columna;
+      let casillaHTML = (<HTMLInputElement> document.getElementById(idCasilla));
       if(this.buscaminas.campoMinas[fila][columna] == 'B')
       {
-        let idCasilla = fila+'_'+columna;
-        let casillaHTML = (<HTMLElement> document.getElementById(idCasilla));
         casillaHTML.innerHTML = 'B'
         minasPlantadas++;
       }
@@ -124,29 +126,53 @@ export class JuegopropioComponent implements OnInit {
     }
   }
 
+  bloquearCuandoPierde()
+  {
+    for(let i=0; i< this.buscaminas.filas; i++)
+    {
+      for(let j=0; j< this.buscaminas.columnas; j++)
+      {
+        let idCasilla = i+'_'+j;
+        let casillaHTML = (<HTMLInputElement> document.getElementById(idCasilla));
+        casillaHTML.readOnly = true;
+      }
+    }
+  }
+
   destapar(fila:number,columna:number)
   {
+    let idCasilla = fila+'_'+columna;
+    let casillaHTML = (<HTMLInputElement> document.getElementById(idCasilla));
     // console.info(this.buscaminas.campoMinas[fila][columna]);
-    console.info('se destapo la fila '+fila+', columna '+columna);
-    let casilla = this.buscaminas.campoMinas[fila][columna];
-    if(casilla == 'B')
+    if(!casillaHTML.readOnly)
     {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Has perdido! inicia un nuevo juego',
-      });
 
-      this.perdioJuego();
+      console.info('se destapo la fila '+fila+', columna '+columna);
+      let casilla = this.buscaminas.campoMinas[fila][columna];
+      if(casilla == 'B')
+      {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Has perdido! inicia un nuevo juego',
+        });
 
+        this.perdioJuego();
+        casillaHTML.readOnly = true;
+      }
+      else
+      {
+        casillaHTML.innerHTML = this.calcularMinasCercanas(fila,columna).toString();
+        console.info(casillaHTML);
+      casillaHTML.readOnly = true;
+
+      }
     }
     else
     {
-      let idCasilla = fila+'_'+columna;
-      let casillaHTML = (<HTMLElement> document.getElementById(idCasilla));
-      casillaHTML.innerHTML = this.calcularMinasCercanas(fila,columna).toString();
-      console.info(casillaHTML);
+      console.info("ya clickeo esta casilla");
     }
+
     
   }
 
@@ -217,26 +243,34 @@ export class JuegopropioComponent implements OnInit {
 
   clickDerecho(event:Event, fila:any,columna:any)
   {
-    this.buscaminas.campoMinas[fila][columna] = {};
-    this.buscaminas.campoMinas[fila][columna].y = 6;
-    this.buscaminas.campoMinas[fila][columna].x = 8;
-    console.info(this.buscaminas.campoMinas[fila][columna]);
     event.preventDefault();
     let idCasilla = fila+'_'+columna;
-    if(this.buscaminas.campoMinas[fila][columna] == 'B')
+    let casillaHTML = (<HTMLInputElement> document.getElementById(idCasilla));
+    if(!casillaHTML.readOnly)
     {
-      this.buscaminas.minasEncontradas++;
-      if(this.buscaminas.minasEncontradas == this.buscaminas.minasTotales)
+      // this.buscaminas.campoMinas[fila][columna] = {};
+      // this.buscaminas.campoMinas[fila][columna].y = 6;
+      // this.buscaminas.campoMinas[fila][columna].x = 8;
+      console.info(this.buscaminas.campoMinas[fila][columna]);
+      if(this.buscaminas.campoMinas[fila][columna] == 'B')
       {
-        Swal.fire(
-          'Bien hecho!',
-          'Has ganado el juego!',
-          'success'
-        )
+        this.buscaminas.minasEncontradas++;
+        if(this.buscaminas.minasEncontradas == this.buscaminas.minasTotales)
+        {
+          Swal.fire(
+            'Bien hecho!',
+            'Has ganado el juego!',
+            'success'
+          )
+        }
       }
+      casillaHTML.innerHTML = '<img src="assets/red-flag.png" width="90%" alt="">'
     }
-    let casillaHTML = (<HTMLElement> document.getElementById(idCasilla));
-    casillaHTML.innerHTML = '<img src="assets/red-flag.png" width="90%" alt="">'
+    else
+    {
+      console.info("ya clickeo la casillalaaa");
+    }
+
   }
 
 
