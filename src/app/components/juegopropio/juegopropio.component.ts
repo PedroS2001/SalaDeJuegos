@@ -114,7 +114,7 @@ export class JuegopropioComponent implements OnInit {
       let casillaHTML = (<HTMLInputElement> document.getElementById(idCasilla));
       if(this.buscaminas.campoMinas[fila][columna] == 'B')
       {
-        casillaHTML.innerHTML = 'B'
+        casillaHTML.innerHTML = '<img style="vertical-align: baseline;" src="assets/bomba.png" width="90%" alt="">'
         minasPlantadas++;
       }
       columna++;
@@ -264,7 +264,7 @@ export class JuegopropioComponent implements OnInit {
           )
         }
       }
-      casillaHTML.innerHTML = '<img src="assets/red-flag.png" width="90%" alt="">'
+      casillaHTML.innerHTML = '<img style="vertical-align: baseline;" src="assets/red-flag.png" width="90%" alt="">'
     }
     else
     {

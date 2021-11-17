@@ -1,24 +1,29 @@
 <div class="contenedor mt-5 fondo">
 
-    <div class="row">
-        <div class="col" > <h2 (click)="seleccionaNivel(1)"> Facil</h2>       </div>
-        <div class="col"> <h2 (click)="seleccionaNivel(2)"> Intermedio</h2>  </div>
-        <div class="col"> <h2 (click)="seleccionaNivel(3)"> Dificil</h2>     </div>
+    <div class="row m-2">
+        <div class="col" >
+            <button (click)="seleccionaNivel(1)" class="bttn-jelly bttn-lg bttn-success" style="height: 100%; width: 100%; border-radius: 10px; margin:2px"><h2>Facil</h2></button>
+        </div>
+        <div class="col">
+            <button (click)="seleccionaNivel(2)" class="bttn-jelly bttn-lg bttn-warning" style="height: 100%; width: 100%; border-radius: 10px; margin:2px"><h2>Intermedio</h2></button>
+        </div>
+        <div class="col"> 
+            <button (click)="seleccionaNivel(3)" class="bttn-jelly bttn-lg bttn-danger" style="height: 100%; width: 100%; border-radius: 10px; margin:2px"><h2>Dificl</h2></button>
+        </div>
     </div>
 
-    <div class="row" style="margin: 0; padding: 0;" *ngFor="let fila of arrayFilas">
+    <div class="row" style="margin: 0; padding: 0; margin-left: 15px;" *ngFor="let fila of arrayFilas">
         <div class="col" style="margin: 0; padding: 0; flex-grow: 0;" *ngFor="let columna of arrayColumnas">
             <button (contextmenu)="clickDerecho($event,fila,columna)" (click)="destapar(fila,columna)" id="{{fila}}_{{columna}}" class="casilla"></button>
         </div>
     </div>
-    <div id="app"></div>
 
-    <!-- <button (click)="pintarTablero()">Pintar tablero</button> -->
-    <!-- <button (click)="generarCampoMinasVacio()">GenerarCampoVacio</button> -->
-    <!-- <button (click)="plantarMinas()">PlantarMinas</button> -->
-    <!-- <button (click)="mostrar()">mostrar</button> -->
-    <!-- <button (click)="inicio()">inicio</button> -->
+    <div class="row m-2">
+        <div class="col">
+            <button class="bttn-simple bttn-lg bttn-primary m-2" (click)="nuevoJuego()">Nuevo Juego</button>
+        </div>
+    </div>
 
-    <button (click)="nuevoJuego()">Nuevo Juego</button>
+
 
 </div>
