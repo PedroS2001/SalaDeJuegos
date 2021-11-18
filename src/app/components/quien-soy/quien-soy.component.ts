@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GithubService } from 'src/app/services/github.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class QuienSoyComponent implements OnInit {
 
   datosGithub:any;
 
-  constructor(public gitService: GithubService) { }
+  constructor(public gitService: GithubService, private router:Router) { }
 
   ngOnInit(): void {
     this.traerDatos();
@@ -23,6 +24,11 @@ export class QuienSoyComponent implements OnInit {
       console.info('Datos de Github', datosRetornados)
       this.datosGithub = datosRetornados;
     });
+  }
+
+  goToBuscaminas()
+  {
+    this.router.navigateByUrl('saladejuegos/buscaminas');
   }
 
 }

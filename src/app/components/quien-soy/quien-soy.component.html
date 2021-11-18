@@ -1,18 +1,24 @@
 <main role="main" >
-    <div class="jumbotron"  >
+  <div class="container" align="center">
+
+    <div class="jumbotron m-3 p-2"  >
       <div class="container" >
         <h1 class="display-3">{{datosGithub.name}}</h1>
-        <img src={{datosGithub.avatar_url}} style="border-radius: 10%;" alt="">
+        <a href="https://github.com/PedroS2001">
+          <img src={{datosGithub.avatar_url}} height="450px" width="450px" style="border-radius: 10%;" alt="">
+        </a>
         <p>{{datosGithub.bio}}</p>
       </div>
     </div>
 
-    <div class="jumbotron"  >
+    <div class="jumbotron m-3 p-2" >
         <div class="container" >
-          <h1 class="display-3">{{datosGithub.name}}</h1>
-          <img src={{datosGithub.avatar_url}} style="border-radius: 10%;" alt="">
-          <p>{{datosGithub.bio}}</p>
+          <h1 class="display-3">Juego Propio:</h1>
+          <h2 class="display-4">Buscaminas</h2>
+          <img (click)="goToBuscaminas()" src="assets/logobuscaminas.png" height="450px" width="450px" style="border-radius: 10%; " alt="">
+          <p>Mi juego propio es el buscaminas. El objetivo del juego es despejar un campo de minas sin detonar ninguna.</p>
         </div>
       </div>
+    </div>
 
   </main>
