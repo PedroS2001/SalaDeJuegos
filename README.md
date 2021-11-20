@@ -1,27 +1,35 @@
-# SalaDeJuegos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+# Sala de juegos
 
-## Development server
+Proyecto hecho para la materia Laboratorio de programacion IV.
+Sala de juegos hecha en Angular y Firebase
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+![Logo](https://github.com/PedroS2001/Saladejuegos/blob/master/src/assets/favicon.ico)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Install my-project with npm
 
-## Running unit tests
+```bash
+  npm install
+```
+    
+## Screenshots
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Ahorcado
+![Ahorcado](https://github.com/PedroS2001/Saladejuegos/blob/master/src/assets/readme/cap_ahorcado.png)
 
-## Running end-to-end tests
+### Mayor o menor
+![Mayor-menor](https://github.com/PedroS2001/Saladejuegos/blob/master/src/assets/readme/cap_mayor-menor.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Preguntados
+![Preguntados](https://github.com/PedroS2001/Saladejuegos/blob/master/src/assets/readme/cap_preguntados.png)
 
-## Further help
+### Buscaminas
+![Buscaminas](https://github.com/PedroS2001/Saladejuegos/blob/master/src/assets/readme/cap_buscaminas.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Sala de chat
+![Chat](https://github.com/PedroS2001/Saladejuegos/blob/master/src/assets/readme/cap_chat.png)
+
