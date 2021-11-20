@@ -9,6 +9,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PreguntadosComponent implements OnInit {
 
+  
+  pregunta:any;
+  pais:any;
   loading:boolean = true;
   arrayPaises:any = [];
   arrayPreguntas:any = [
@@ -31,7 +34,7 @@ export class PreguntadosComponent implements OnInit {
       respuesta: 1,
     },
     {
-      //BOGOTA
+      //BRASIL
       pregunta:'¿Quien es el maximo goleador de la seleccion de futbol de Brasil?',
       op1:'Ronaldinho',
       op2:'Ronaldo',
@@ -70,8 +73,6 @@ export class PreguntadosComponent implements OnInit {
     });
   }
 
-  pregunta:any;
-  pais:any;
 
   armarPregunta()
   {
@@ -83,9 +84,12 @@ export class PreguntadosComponent implements OnInit {
     console.info('pais', this.pais);
     this.loading = false;
   }
+
+
   getRandomInt(min:number, max:number) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
+
 
   seleccionarRta(respuesta:any)
   {
@@ -110,7 +114,7 @@ export class PreguntadosComponent implements OnInit {
     }
     setTimeout(() => {
       this.armarPregunta();
-    }, 150);
+    }, 200);
   }
 
 
