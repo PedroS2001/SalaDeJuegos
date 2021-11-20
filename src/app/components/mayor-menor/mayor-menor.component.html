@@ -1,12 +1,12 @@
-<div class="container-fluid" style="margin-top: 1rem; padding: 20px;">
+<div class="container-fluid" style="margin-top: 1rem; margin-bottom: 1rem; padding: 20px;">
 
-    <div class="row">
+    <div class="row" align="center">
         <div class="col-6">
-            <img src="../../../assets/carta.jpg" style="height: 8cm; width: 8cm ;" alt="Card image">
+            <img src="../../../assets/carta.jpg" width="90%" height="100%" style="max-width: 230px;" alt="Card image">
         </div>
 
         <div class="col-6">
-            <div style="height: 8cm; width: 8cm ; background-color: white;  ">
+            <div style="width: 90%; height: 100%; max-width: 230px; background-color: white;">
                 <p style="font-size: 3cm;" >{{numeroAleatorio}}</p>
             </div>
         </div>
@@ -19,7 +19,7 @@
     <div class="row" >
         <div class="col" align="center">
             <h3>Puntuacion:</h3>
-            <h1 style="height: 50px; width: 50px; background-color: burlywood;"> {{puntuacion}}</h1>
+            <h1 style="height: 50px; width: 50px; border-radius: 5%; background-color: burlywood;"> {{puntuacion}}</h1>
         </div>
     </div>
 
@@ -31,18 +31,17 @@
 
     <div class="row">
         <div class="col"> 
-            <button class="bttn-jelly bttn-lg bttn-danger" id="btnMenor" (click)="esMenor()" >MENOR</button>
-
+            <button class="bttn-jelly bttn-md bttn-danger" id="btnMenor" (click)="esMenor()" >MENOR</button>
         </div>
 
         <div class="col">
-            <button class="bttn-jelly bttn-lg bttn-danger" id="btnMayor" (click)="esMayor()" >MAYOR</button>
+            <button class="bttn-jelly bttn-md bttn-danger" id="btnMayor" (click)="esMayor()" >MAYOR</button>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <button class="bttn-jelly bttn-lg bttn-success" (click)="ReiniciarJuego()" >Nuevo Juego</button>
+            <button class="bttn-jelly bttn-md bttn-success" (click)="ReiniciarJuego()" >Nuevo Juego</button>
         </div>
     </div>
 
