@@ -1,5 +1,9 @@
 .jumbotron{
-    background-color: rgb(255, 255, 255, 0.8);
+    background-color: rgb(16, 16, 16, 0.8);
     max-width: 600px;
     border-radius: 10%;
+}
+
+h1, h2, p{
+    color: wheat;
 }
