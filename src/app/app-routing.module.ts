@@ -19,9 +19,9 @@ const routes: Routes = [
   { path: 'juegopropio', component: JuegopropioComponent },
 
   // { path: 'mayor-menor', loadChildren: () => import('./saladejuegos/saladejuegos.module').then(m => m.SaladejuegosModule)},
-  // { path: 'mayor-menor', component: MayorMenorComponent},
-  // { path: 'ahorcado', component: AhorcadoComponent },
-  // { path: 'chat', component: ChatComponent },
+  { path: 'mayor-menor', component: MayorMenorComponent},
+  { path: 'ahorcado', component: AhorcadoComponent },
+  { path: 'chat', component: ChatComponent },
   { path: '', redirectTo: 'home', pathMatch: "full" },
   { path: 'saladejuegos', loadChildren: () => import('./saladejuegos/saladejuegos.module').then(m => m.SaladejuegosModule), canActivate: [GuardianService] },
   { path:'**', component: PagErrorComponent }
