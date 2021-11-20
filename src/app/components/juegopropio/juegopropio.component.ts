@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -114,7 +114,7 @@ export class JuegopropioComponent implements OnInit {
       let casillaHTML = (<HTMLInputElement> document.getElementById(idCasilla));
       if(this.buscaminas.campoMinas[fila][columna] == 'B')
       {
-        casillaHTML.innerHTML = '<img style="vertical-align: baseline;" src="assets/bomba.png" width="90%" alt="">'
+        casillaHTML.innerHTML = '<img style="vertical-align: baseline;" src="assets/buscaminas/bomba.png" width="90%" alt="">'
         minasPlantadas++;
       }
       columna++;
@@ -248,9 +248,6 @@ export class JuegopropioComponent implements OnInit {
     let casillaHTML = (<HTMLInputElement> document.getElementById(idCasilla));
     if(!casillaHTML.readOnly)
     {
-      // this.buscaminas.campoMinas[fila][columna] = {};
-      // this.buscaminas.campoMinas[fila][columna].y = 6;
-      // this.buscaminas.campoMinas[fila][columna].x = 8;
       console.info(this.buscaminas.campoMinas[fila][columna]);
       if(this.buscaminas.campoMinas[fila][columna] == 'B')
       {
@@ -264,7 +261,7 @@ export class JuegopropioComponent implements OnInit {
           )
         }
       }
-      casillaHTML.innerHTML = '<img style="vertical-align: baseline;" src="assets/red-flag.png" width="90%" alt="">'
+      casillaHTML.innerHTML = '<img style="vertical-align: baseline;" src="assets/buscaminas/red-flag.png" width="90%" alt="">'
     }
     else
     {

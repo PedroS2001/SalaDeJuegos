@@ -1,29 +1,31 @@
 <div class="contenedor mt-5 fondo">
 
+    <!-- Botones para seleccionar nivel -->
     <div class="row m-2">
-        <div class="col" >
+        <div class="col m-2" >
             <button (click)="seleccionaNivel(1)" class="bttn-jelly bttn-lg bttn-success" style="height: 100%; width: 100%; border-radius: 10px; margin:2px"><h2>Facil</h2></button>
         </div>
-        <div class="col">
+        <div class="col m-2">
             <button (click)="seleccionaNivel(2)" class="bttn-jelly bttn-lg bttn-warning" style="height: 100%; width: 100%; border-radius: 10px; margin:2px"><h2>Intermedio</h2></button>
         </div>
-        <div class="col"> 
+        <div class="col m-2"> 
             <button (click)="seleccionaNivel(3)" class="bttn-jelly bttn-lg bttn-danger" style="height: 100%; width: 100%; border-radius: 10px; margin:2px"><h2>Dificl</h2></button>
         </div>
     </div>
 
+    <!-- Tablero -->
     <div class="row" style="margin: 0; padding: 0; margin-left: 15px;" *ngFor="let fila of arrayFilas">
         <div class="col" style="margin: 0; padding: 0; flex-grow: 0;" *ngFor="let columna of arrayColumnas">
             <button (contextmenu)="clickDerecho($event,fila,columna)" (click)="destapar(fila,columna)" id="{{fila}}_{{columna}}" class="casilla"></button>
         </div>
     </div>
 
+    <!-- Boton nuevo juego -->
     <div class="row m-2">
         <div class="col">
             <button class="bttn-simple bttn-lg bttn-primary m-2" (click)="nuevoJuego()">Nuevo Juego</button>
         </div>
     </div>
-
 
 
 </div>
