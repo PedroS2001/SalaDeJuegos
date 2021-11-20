@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { ChatService } from 'src/app/services/chat.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
@@ -10,7 +11,12 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 })
 export class ChatComponent implements OnInit {
   
-  constructor(private chatService:ChatService, private authService:AuthService, firestore :FirestoreService) {
+  mensaje:string = '';
+  correo:string = '';
+  public mensajes:any = [];
+
+
+  constructor(private chatService:ChatService, private authService:AuthService, firestore :FirestoreService, private toastr:ToastrService) {
     this.correo = authService.userLogueado.email;
     console.log(this.correo);
 
@@ -22,35 +28,73 @@ export class ChatComponent implements OnInit {
     this.scrollToBottom();
   }
 
-  mensaje:string = '';
-  correo:string = '';
-  public mensajes:any = [];
+
+  /** Controla que ninguna palabra del mensaje tenga mas de 20 caracteres
+   * 
+   * @param mensaje 
+   * @returns true si se puede enviar el mensaje, false si no
+   */
+  palabrasPermitidas(mensaje:string)
+  {
+    let retorno = true;
+    let arrayPalabras = mensaje.split(" ");
+
+    arrayPalabras.forEach( (palabra:string) => {
+      if(palabra.length > 20)
+      {
+        retorno = false;
+      }
+    });
+    return retorno;
+  }
 
 
   EnviarMensaje()
   {
     this.mensaje = this.mensaje.trim();
+
+    if(this.palabrasPermitidas(this.mensaje))
+    {
+      console.info('Se envia el mensaje');
+    }
+    else
+    {
+      console.info('No se envio el mensjae');
+    }
+
+
     if(this.mensaje != '')
     {
-
-      let cantidad:number = 1111;
-      for(let item of this.mensajes)
+      if(this.palabrasPermitidas(this.mensaje))
       {
-        cantidad++;
-      }
-      this.correo = this.authService.userLogueado.email;
-      this.chatService.agregarMensaje(this.correo, this.mensaje, cantidad);
+        let cantidad:number = 1111;
+        for(let item of this.mensajes)
+        {
+          cantidad++;
+        }
+        this.correo = this.authService.userLogueado.email;
+        this.chatService.agregarMensaje(this.correo, this.mensaje, cantidad);
 
-      this.mensaje = '';
-      (<HTMLInputElement> document.getElementById('txtMsj')).focus();
+        this.mensaje = '';
+        (<HTMLInputElement> document.getElementById('txtMsj')).focus();
+        
+        this.scrollToBottom();
+      }
+      else
+      {
+        this.toastr.error('No se pueden enviar palabras con mas de 20 letras en el mensaje ', '' ,{
+          timeOut: 1500,
+            closeButton: true,
+            positionClass: 'toast-top-center'
+          });
+      }
       
-      this.scrollToBottom();
     }
     
   }
   
-  @ViewChild('content')
-  content!: ElementRef;
+  
+  @ViewChild('content') content!: ElementRef;
 
   scrollToBottom = () => {
     try {
@@ -68,7 +112,6 @@ export class ChatComponent implements OnInit {
       this.mensajes = [];
       msgsSnapshot.forEach((registro: any) => {
         this.mensajes.push(
-          // id: registro.payload.doc.id,
           registro.payload.doc.data()
         );
       })

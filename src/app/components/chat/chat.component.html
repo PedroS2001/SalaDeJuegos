@@ -1,20 +1,20 @@
 <div class="container">
-<h3 class="text-center" style="color: white;">Sala de Chat</h3>
-<div class="messaging">
-      <div class="inbox_msg">
-        <div class="mesgs">
+  <h3 class="text-center" style="color: white;">Sala de Chat</h3>
+  <div class="messaging">
+    <div class="inbox_msg">
+      <div class="mesgs">
 
-          <div class="msg_history" #content >
-            <div *ngFor="let item of mensajes" >
+        <div class="msg_history" #content>
+          <div *ngFor="let item of mensajes">
 
-
-            <div class="incoming_msg"  *ngIf="this.correo != item.usuario ; else mensajeMio;" >
-              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+            <div class="incoming_msg" *ngIf="this.correo != item.usuario ; else mensajeMio;">
+              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+              </div>
               <div class="received_msg">
                 <div class="received_withd_msg">
                   <h6 align="left">{{item.usuario}}</h6>
                   <p> {{item.mensaje}}</p>
-                  <span class="time_date"> {{item.hora}}  -  {{item.fecha}}</span>
+                  <span class="time_date"> {{item.hora}} - {{item.fecha}}</span>
                 </div>
               </div>
             </div>
@@ -24,32 +24,37 @@
                 <div class="sent_msg" align="right">
                   <h6 align="right">{{item.usuario}}</h6>
                   <p> {{item.mensaje}}</p>
-                  <span class="time_date"> {{item.hora}}  -  {{item.fecha}}</span>
+                  <span class="time_date"> {{item.hora}} - {{item.fecha}}</span>
                 </div>
-                <div class="outgoing_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                <div class="outgoing_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+                </div>
               </div>
             </ng-template>
-                  
-          </div>  <!-- Fin  del ngfor -->
-          </div>  <!--Cierre del div de chat -->
 
-          <div class="type_msg" align="right">
-            <div class="input_msg_write">
-              <input type="text" class="write_msg" (keydown)="handleKeyDown($event)" [(ngModel)]="mensaje" id="txtMsj" placeholder="Envia un mensaje" />
-              <button (click)="EnviarMensaje()" class="msg_send_btn" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-                </svg>
-                Enviar
-              </button>
-              <i class="bi bi-envelope"></i>
-              
-            </div>
-          </div>
-
+          </div> <!-- Fin  del ngfor -->
         </div>
+        <!--Cierre del div de chat -->
+
+        <div class="type_msg" align="right">
+          <div class="input_msg_write">
+            <input type="text" class="write_msg" (keydown)="handleKeyDown($event)" [(ngModel)]="mensaje" id="txtMsj"
+              placeholder="Envia un mensaje" />
+            <button (click)="EnviarMensaje()" class="msg_send_btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
+                viewBox="0 0 16 16">
+                <path
+                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+              </svg>
+              Enviar
+            </button>
+            <i class="bi bi-envelope"></i>
+
+          </div>
+        </div>
+
       </div>
-      
-      
     </div>
+
+
   </div>
+</div>
