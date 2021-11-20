@@ -205,7 +205,7 @@ export class JuegopropioComponent implements OnInit {
 
 
   /**Calcula las minas que tiene en los casilleros aledaños. retorna esa cantidad */
-  calcularMinasCercanas(fila:number, columna:number)
+  calcularMinasCercanas(fila:number, columna:number) :number
   {
     let minasAlrededor = 0;
 
