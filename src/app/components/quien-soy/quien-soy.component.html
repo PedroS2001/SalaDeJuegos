@@ -4,7 +4,7 @@
     <div class="jumbotron m-3 p-2">
       <div class="container">
         <h1>{{datosGithub.name}}</h1>
-        <a href="https://github.com/PedroS2001">
+        <a href="https://github.com/PedroS2001" target="_blank">
           <img src={{datosGithub.avatar_url}} style="border-radius: 10%;" width="80%" alt="">
         </a>
         <p>{{datosGithub.bio}}</p>
@@ -15,7 +15,7 @@
       <div class="container">
         <h1>Juego Propio:</h1>
         <h2>Buscaminas</h2>
-        <img (click)="goToBuscaminas()" src="assets/buscaminas/logobuscaminas.png" width="80%" style="border-radius: 10%; " alt="">
+        <img (click)="goToBuscaminas()" src="assets/buscaminas/logobuscaminas.png" width="80%" style="border-radius: 10%; cursor: pointer; " alt="">
         <p>Mi juego propio es el buscaminas. El objetivo del juego es despejar un campo de minas sin detonar ninguna.
         </p>
       </div>

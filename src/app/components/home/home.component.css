@@ -1,36 +1,35 @@
 /* Move down content because we have a fixed navbar that is 3.5rem tall */
 body {
-    padding-top: 3.5rem;
-  }
+  padding-top: 3.5rem;
+}
 
-.jumbotron{
-  margin: 8px; 
-  border-radius: 1cm; 
+.jumbotron {
+  margin: 8px;
+  border-radius: 1cm;
   background-image: url("../../../assets/header.jpg");
   background-position: center center;
-  /* El fonde no se repite */
-  /* background-repeat: no-repeat; */
-  /* Fijamos la imagen a la ventana para que no supere el alto de la ventana */
-  /* background-attachment: fixed; */
-  /* El fonde se re-escala automáticamente */
+  /* El fondo se re-escala automáticamente */
   background-size: cover;
   /* Color de fondo si la imagen no se encuentra o mientras se está cargando */
   background-color: #FFF;
   /* Fuente para el texto */
   text-align: center;
   color: black;
-  /* background-color: rgb(102, 51, 153,0.5); */
-  /* font-family: "Times New Roman", Times, serif; */
+  font-family: "Times New Roman", Times, serif;
 }
-.jumbotron h1,p{
+
+.jumbotron h1,
+p {
   background-color: rgb(255, 255, 255, 0.3);
   /* padding: 50%; */
-
 }
 
-.card{
-  margin: 8px; 
-  border-radius: 1cm; 
+.card {
+  margin: 8px;
+  border-radius: 1cm;
   background-image: url("../../../assets/fondoMesa.jpg");
-  /* background-color: #bcc54e; */
+}
+
+.card a:hover {
+  cursor: pointer;
 }

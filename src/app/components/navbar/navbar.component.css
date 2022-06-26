@@ -1,0 +1,23 @@
+.container{
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.logo{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 3rem;
+    cursor: pointer;
+}
+
+.nav-item {
+    transition: all 0.5s;
+    color: white;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+.nav-item:hover{
+    transform: scale(1.1);
+}

@@ -10,67 +10,45 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 })
 export class LoginComponent implements OnInit {
 
-  correo:string = "";
-  clave:string = "";
-  error:string = "";
+  correo: string = "";
+  clave: string = "";
+  error: string = "";
 
-  constructor(public authService: AuthService,  private router : Router, private fireService : FirestoreService) { }
+  constructor(public authService: AuthService, private router: Router, private fireService: FirestoreService) { }
 
   ngOnInit(): void {
   }
 
-  
-  
-  funcion1()
-  {
-    console.log(this.authService.loggedIn);
-  }
-  funcion2()
-  {
-    console.log(this.authService.userData);
-  } 
-  funcion3()
-  {
-    console.log(this.authService.userLogueado);
-  }
-
-
-
-
-  goToRegistro()
-  {
+  goToRegistro() {
     this.router.navigateByUrl('registro');
   }
-  
-  AccesoRapido()
-  {
+
+  AccesoRapido() {
     this.correo = "invitado@invitado.com";
     this.clave = "123456";
   }
 
   signIn() {
     this.authService.SignIn(this.correo, this.clave)
-    .then((result) => {
-      this.authService.loggedIn = true;
-      this.authService.currentUser = {'correo': this.correo, 'clave':this.clave};
-      // console.log(result.user?.email);
-      // console.log(this.authService.userLogueado);
-      this.fireService.agregarLog(this.correo);
-      this.router.navigateByUrl('home');
-      
-      
-    }).catch((error) => {
+      .then((result) => {
+        this.authService.loggedIn = true;
+        this.authService.currentUser = { 'correo': this.correo, 'clave': this.clave };
+        // console.log(result.user?.email);
+        // console.log(this.authService.userLogueado);
+        this.fireService.agregarLog(this.correo);
+        this.router.navigateByUrl('home');
+
+
+      }).catch((error) => {
         console.log(error);
-        if(error.code == 'auth/wrong-password')
-        {
+        if (error.code == 'auth/wrong-password') {
           this.error = "Contraseña incorrecta";
         }
-        else
-        {
+        else {
           this.error = "Ha ocurrido un error. Intente de nuevo mas tarde";
         }
-    })
+      })
   }
-     
+
 
 }

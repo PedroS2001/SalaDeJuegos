@@ -10,33 +10,8 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'Seneriz Sala de Juegos';
 
-  constructor(public authService: AuthService, private router: Router) {
+  constructor() {
    }
 
-  desloguear()
-  {
-    this.authService.SignOut();
-    this.goToLogin();
-  }
-
-  goToHome()
-  {
-    this.router.navigateByUrl('home');
-  }
-  goToQuienSoy()
-  {
-    this.router.navigateByUrl('quien-soy');
-  }
-  goToLogin()
-  {
-    this.router.navigateByUrl('login');
-  }
-  goToRegistro()
-  {
-    this.router.navigateByUrl('registro');
-  }
-  goToChat()
-  {
-    this.router.navigateByUrl('saladejuegos/chat');
-  }
+  
 }

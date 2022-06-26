@@ -1,1 +1,45 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a (click)="goToHome()"><img src="../assets/favicon.ico" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-linkk" (click)="goToHome()">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-linkk" (click)="goToQuienSoy()">Quien Soy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-linkk" *ngIf="authService.userLogueado != ''" (click)="goToChat()">Chat</a>
+            </li>
+
+
+            <ng-template #showLogin>
+                <li class="nav-item">
+                    <a class="nav-linkk" (click)="goToLogin()">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-linkk" (click)="goToRegistro()">Registro</a>
+                </li>
+            </ng-template>
+        </ul>
+
+        <ul class="navbar-nav" style="align-items: center;">
+            <li class="nav-item" *ngIf="authService.userLogueado != '' ; else showLogin;">
+                <a class="nav-linkk" (click)=desloguear()>Logout</a>
+            </li>
+
+            <li>
+                <a *ngIf="authService.currentUser" class="nav-linkk" style="color: wheat;"> {{authService.currentUser.correo}} </a>
+            </li>
+        </ul>
+
+
+
+    </div>
+</nav>

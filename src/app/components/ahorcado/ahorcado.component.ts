@@ -149,9 +149,7 @@ export class AhorcadoComponent implements OnInit {
   ReiniciarJuego()
   {
     this.router.navigateByUrl('refresh', {skipLocationChange: true}).
-    then(()=> this.router.navigate(["saladejuegos/ahorcado"]));
-
-//    window.location.reload()
+      then( () => this.router.navigate(["saladejuegos/ahorcado"]));
   }
 
   /** Verifica si el jugador gano.
@@ -162,13 +160,13 @@ export class AhorcadoComponent implements OnInit {
   PlayerWins()
   {
     for(let item of this.palabraConGuionesArray)
+    {
+      if(item == "_")
       {
-        if(item == "_")
-        {
-          return false;
-        }
+        return false;
       }
-      return true;
+    }
+    return true;
   }
 
 

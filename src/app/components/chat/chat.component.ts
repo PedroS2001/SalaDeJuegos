@@ -53,16 +53,6 @@ export class ChatComponent implements OnInit {
   {
     this.mensaje = this.mensaje.trim();
 
-    if(this.palabrasPermitidas(this.mensaje))
-    {
-      console.info('Se envia el mensaje');
-    }
-    else
-    {
-      console.info('No se envio el mensjae');
-    }
-
-
     if(this.mensaje != '')
     {
       if(this.palabrasPermitidas(this.mensaje))
@@ -116,14 +106,6 @@ export class ChatComponent implements OnInit {
         );
       })
     });
-
-  }
-
-  pulsar(e:any) {
-    if (e.keyCode === 13 ) {
-      this.EnviarMensaje();
-        e.preventDefault();
-    }
   }
 
   handleKeyDown($event:any)
